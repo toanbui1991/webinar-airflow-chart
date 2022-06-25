@@ -12,8 +12,5 @@ RUN apt-get update \
 
 USER airflow
 
-COPY requirements.txt .
-
-RUN pip install -r requirements.txt
-
-
+RUN pip install pip install PyMySQL \
+    apache-airflow[cncf.kubernetes]
