@@ -2,13 +2,13 @@ apiVersion: rbac.authorization.k8s.io/v1
 # This cluster role binding allows anyone in the "manager" group to read secrets in any namespace.
 kind: ClusterRoleBinding
 metadata:
-  name: sa-cluster-admin
+  name: scale-apps_auto-scale-robot-crb
 subjects:
 - kind: ServiceAccount
-  name: playground # Name is case sensitive
-  namespace: airflow
+  name: auto-scale-robot-sa # Name is case sensitive
+  namespace: default
   # apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
-  name: manage-pods
+  name: scale-apps_auto-scale-robot
   apiGroup: rbac.authorization.k8s.io
